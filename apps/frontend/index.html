@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Collaborative Editor</title>
+    <style>
+      :root{--bg:#0f1115;--panel:#151821;--border:#232739;--text:#e6e6e6;--muted:#9aa4b2;--accent:#3b82f6;--panel-hover:#1a1e2a;--panel-active:#0d1017}
+      html,body,#root{height:100%;}
+      body{margin:0;background:var(--bg);color:var(--text);font:13px/1.4 ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial;}
+      button,select,input{background:var(--panel);color:var(--text);border:1px solid var(--border);border-radius:4px;padding:6px 8px;box-sizing:border-box;transition:background .12s ease,border-color .12s ease,transform .05s ease}
+      button{cursor:pointer}
+      button:hover{background:var(--panel-hover);border-color:#2e3350}
+      button:active{background:var(--panel-active);transform:translateY(1px)}
+      h3{margin:8px 0 6px;font-weight:600;font-size:12px;color:var(--muted)}
+      .toolbar{display:flex;align-items:center;gap:8px;padding:8px 10px;border-bottom:1px solid var(--border);background:#0c0f17;min-height:36px}
+      .sidebar{width:260px;background:var(--panel);border-right:1px solid var(--border);display:flex;flex-direction:column;max-height:100vh}
+      .status{padding:8px 10px;border-top:1px solid var(--border);background:#0c0f17;color:var(--muted);min-height:36px;display:flex;align-items:center}
+      .list{flex:1;overflow:auto}
+      .participant{display:flex;align-items:center;gap:8px;padding:6px 10px;border-bottom:1px solid rgba(255,255,255,0.03)}
+      .dot{width:10px;height:10px;border-radius:50%;display:inline-block}
+      .modal{position:fixed;inset:0;background:rgba(0,0,0,.6);display:flex;align-items:center;justify-content:center;z-index:20}
+      .modal-card{background:var(--panel);border:1px solid var(--border);padding:16px;width:360px;box-shadow:0 10px 30px rgba(0,0,0,.5)}
+      .modal-card input{width:100%;max-width:100%;display:block}
+      .toast{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);background:#0c0f17;border:1px solid var(--border);padding:10px 14px;border-radius:6px;z-index:30}
+
+
+      /* Selection highlighting styles */
+      .remote-selection {
+        background: currentColor !important;
+        opacity: 0.7 !important;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

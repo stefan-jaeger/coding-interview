@@ -1,0 +1,5 @@
+/apps/backend/build/
+/apps/backend/.gradle/
+/apps/frontend/dist/
+/apps/frontend/node_modules/
+/.idea/

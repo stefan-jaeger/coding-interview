@@ -1,0 +1,14 @@
+{
+  "name": "collab-editor-monorepo",
+  "private": true,
+  "workspaces": [
+    "apps/frontend"
+  ],
+  "scripts": {
+    "bootstrap": "npm --workspaces install",
+    "dev": "npm run -w apps/backend dev & npm run -w apps/frontend dev",
+    "build": "npm run -w apps/frontend build && ./apps/backend/gradlew -p apps/backend build",
+    "test": "npm run -w apps/frontend test",
+    "lint": "npm run -w apps/frontend lint"
+  }
+}
